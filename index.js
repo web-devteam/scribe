@@ -933,7 +933,7 @@ else{{document.getElementById("save").innerText="save as note"}}
 }, 1000);
 
 document.getElementById("calib").addEventListener("click", ()=>{
-location.href="/test.html"
+location.href="/scribe/test.html"
 localStorage.setItem("displayedtips", "true")
 })
 if(localStorage.getItem("displayedtips")!="true"){document.getElementById("blank").style.display="flex"}
@@ -958,4 +958,5 @@ if ('serviceWorker' in navigator) {
     });
   });
 }
+
 
