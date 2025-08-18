@@ -151,7 +151,7 @@ else if(xless>5 && xmore<=2 && form1=="r"){document.getElementById("prediction3"
 else if(xless<=2 && xmore>5 && form1=="r"){document.getElementById("prediction3").innerHTML="F"; check();pick=26}
 else{document.getElementById("prediction3").innerHTML="unknown"}}
 
-if((setx-ssetx)>200 && ymore<=15 && xmore<=15 && yless<=15){document.getElementById("prediction3").innerHTML="space"}
+if((setx-ssetx)>200 && ymore<=15 && xmore<=15 && yless<=15){document.getElementById("prediction3").innerHTML="space"; check()}
 
 
 console.log(subl+"less more"+subm)
@@ -271,3 +271,4 @@ else{{setTimeout(() => {document.getElementById("prediction3").innerHTML="try ag
 
 
 }
+
