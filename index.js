@@ -937,3 +937,25 @@ location.href="/test.html"
 localStorage.setItem("displayedtips", "true")
 })
 if(localStorage.getItem("displayedtips")!="true"){document.getElementById("blank").style.display="flex"}
+
+if ('serviceWorker' in navigator) {
+  window.addEventListener('load', () => {
+    navigator.serviceWorker.register('/scribe/sw.js').then(reg => {
+      console.log('Service Worker registered with scope:', reg.scope);
+
+      reg.onupdatefound = () => {
+        const newWorker = reg.installing;
+        newWorker.onstatechange = () => {
+          if (newWorker.state === 'installed' && navigator.serviceWorker.controller) {
+            // New version detected
+            window.alert("New update available! ✨");
+            // Optional: window.location.reload();
+          }
+        };
+      };
+    }).catch(err => {
+      console.error('Service Worker registration failed:', err);
+    });
+  });
+}
+
