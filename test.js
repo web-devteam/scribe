@@ -266,9 +266,10 @@ video.pause()
 else if(document.getElementById("prediction3").innerHTML=="z" && pick==25){setTimeout(() => {document.getElementById("prediction3").innerHTML="calibrated"; video.currentTime = 256; video.play();currenttime = video.currentTime;setTimeout(() => {
 video.pause()
 }, 5000)}, 1000); }
-else if(document.getElementById("prediction3").innerHTML=="space" && pick==2){window.alert("calibration complete make sure to adhere to calibration patterns");location.href="/index.html"}
+else if(document.getElementById("prediction3").innerHTML=="space" && pick==2){window.alert("calibration complete make sure to adhere to calibration patterns");location.href="/scribe/index.html"}
 else{{setTimeout(() => {document.getElementById("prediction3").innerHTML="try again"; }, 1000);}}
 
 
 }
+
 
