@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>scribe</title>
+    <link rel="stylesheet" href="index.css">
+    <link rel="icon" href="stylus_note_60dp_000000_FILL0_wght400_GRAD0_opsz48.png">
+</head>
+<body>
+<div id="calibrate">
+<h3 style="font-family: 'Edu NSW ACT Cursive', cursive;">handwriting calibration</h3>
+<p>write the letter displayed in the right box in thesame order as it is written on the left screen</p>
+<div style="display: flex; column-gap: 50px;"><canvas id="testcanvas" width="500" height="300px"></canvas><video id="src" autoplay src="video.mp4"></video></div>
+<p>1 out of 27</p>
+<p id="prediction3" style="font-weight: bold; font-family: sans-serif;">try again</p>
+</div>
+
+<script src="test.js"></script>
+</body>
+</html>

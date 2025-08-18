@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>scribe</title>
+     <link rel="manifest" href="manifest.json" />
+     <link rel="icon" href="stylus_note_24dp_000000_FILL0_wght400_GRAD0_opsz24.png">
+<link rel="stylesheet" href="index.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Edu+NSW+ACT+Cursive:wght@400..700&display=swap" rel="stylesheet">
+</head>
+<body>
+<div id="topbar"><h1 id="maintxt">scribe</h1><img id="logo" style="width: 30px;" src="stylus_note_60dp_FFFFFF_FILL0_wght400_GRAD0_opsz48.png" alt=""><p style="position: absolute; bottom: 10px; font-size: 10px; left: 5px;">version 1.0</p></div>
+<div id="write">
+<textarea id="preview" placeholder="text prieview"></textarea><p id="prediction"></p><p id="prediction2"></p><h1 id="writetxt">handwritting</h1>
+<p id="save">save as note</p><p id="copy">copy text</p><canvas id="canvas" width="1000" height="270px"></canvas>
+<button id="aux1"><input id="aux1in" type="text"></button>
+<button id="aux2"><input id="aux2in" type="text"></button>
+<button id="sign">#>?</button>
+<button id="caps">caps</button>
+<button id="cnl">X</button>
+<div id="signbx"><div><button class="sign">.</button><button class="sign">,</button><button class="sign">nxt ln</button>
+<button class="sign">;</button><button class="sign">:</button><button class="sign">@</button><button class="sign">"</button>
+<button class="sign">!</button><button class="sign">#</button><button class="sign">$</button><button class="sign">-</button>
+<button class="sign">=</button><button class="sign">&</button><button class="sign">(</button><button class="sign">)</button>
+<button class="sign">/</button><button class="sign">?</button></div><div>
+<button class="sign">1</button><button class="sign">2</button><button class="sign">3</button><button class="sign">4</button><button class="sign">5</button><button class="sign">6</button><button class="sign">7</button><button class="sign">8</button><button class="sign">9</button><button class="sign">0</button></div></div>
+</div>
+<div id="draw">
+<canvas id="bgcanvas"></canvas>
+<canvas id="drawcanvas"></canvas>
+
+<div id="drawbx"><label for="brushes"><p style="margin: 0; margin-bottom: 5px; font-family: monospace;">brush: </p><img style="width: 20px;" src="draw_24dp_000000_FILL0_wght400_GRAD0_opsz24 (1).png" alt=""><select  id="brushes"><option value="none">none</option><option value="pencil">pencil</option><option value="brush">brush</option><option value="highlight">highlight</option>
+<option value="marker">shadow/marker</option><option value="watercolor">watercolor</option><option value="caligraphy">caligraphy</option><option value="spraycan">spraycan</option></select></label>
+
+<div id="colorrange"><div style="display: flex;"><p class="colorpalet"></p><p class="colorpalet"></p><p class="colorpalet"></p><p class="colorpalet"></p><p class="colorpalet"></p></div><div style="display: flex;"><p class="colorpalet"></p>
+<p class="colorpalet"></p><p class="colorpalet"></p><p class="colorpalet"></p><p class="colorpalet"></p></div><input type="color" id="color"></div>
+<div id="inputs"><label for="" style="display: flex;">thickness: <input id="thickness" value="2" type="number"></label><label for="" style="display: flex;">opacity: <input id="opacity" value="0.5" type="number"></label><label for="" style="display: flex;">css: <input id="css" value="" type="text"></label></div>
+<div id="imgbx"><img id="eraser" src="ink_eraser_30dp_000000_FILL0_wght400_GRAD0_opsz24 (1).png" alt=""><img id="savedraw" src="save_as_30dp_000000_FILL0_wght400_GRAD0_opsz24.png" alt=""><img id="clear" src="draw_24dp_000000_FILL0_wght400_GRAD0_opsz24 (1).png" alt=""></div>
+<div id="imgbx" style="margin-left: -30px;"><img id="bucket" src="colors_30dp_000000_FILL0_wght400_GRAD0_opsz24.png" alt=""><img id="undo" src="undo_30dp_000000_FILL0_wght400_GRAD0_opsz24.png" alt=""><img id="redo" src="redo_30dp_000000_FILL0_wght400_GRAD0_opsz24.png" alt=""></div><div style="display: flex; align-items: center; justify-content: center; flex-direction: column; font-size: 13px; margin-left: -20px;"><img id="lock" src="upload_30dp_000000_FILL0_wght400_GRAD0_opsz24.png" alt=""><p>lock bar</p></div></div>
+</div>
+<div id="test">
+<div id="testbx1"><button id="testbtn">0</button>
+<p class="tips">select either quick test or normal to calibrate</p></div>
+<div id="testbx2"><h1 id="rangescore">0</h1>
+<input value="0" max="100" id="testrange" type="range">
+<p class="tips">drag the slider tip with average speed to the end, like so: </p>
+<input value="0" max="100" type="range" id="testslider">
+</div>
+<div id="testbx3">
+<div id="display"><h4 id="displaytxt"></h4></div>
+<div class="keyboard"><div><button class="key">a</button><button class="key">b</button><button class="key">c</button><button class="key">d</button><button class="key">e</button>
+<button class="key">f</button><button class="key">g</button><button class="key">h</button><button class="key">i</button><button class="key">j</button></div>
+<div><button class="key">k</button><button class="key">l</button><button class="key">m</button><button class="key">n</button><button class="key">o</button><button class="key">p</button>
+<button class="key">q</button><button class="key">r</button><button class="key">s</button><button class="key">t</button></div>
+<div><button class="key">u</button><button class="key">v</button><button class="key">w</button><button class="key">x</button><button class="key">y</button><button class="key">z</button></div></div>
+<p class="tips">type the following letters 'T' 'I' 'M' 'E' 'L' 'A' 'N' 'E'</p></div>
+<div id="result"><img src="check_circle_24dp_000000_FILL0_wght400_GRAD0_opsz24.png" alt=""><p class="tips">style successfully calibrated <br> - overall style accuracy: <span>00%</span>,<br> - style precision : <span>0.0</span></p></div>
+<div id="testbx"><h2>calibrate</h2>
+<p id="lastdate">no record</p>
+<p>overall accuracy : <span>--</span></p>
+<p>style precision : <span>--</span></p>
+<h3 id="timing">00</h3>
+<div style="display: flex;"><button id="test1">quick test</button>
+<button id="test2">normal test</button></div>
+</div>
+</div>
+<div id="notes">
+<h1 style="font-family: 'Edu NSW ACT Cursive', cursive; margin-left: 20px; position: absolute; top: 0px; margin-bottom: 100px;">notes</h1>
+<div id="scroll">
+</div>
+<textarea name="" id="notetext" placeholder="content (autosave)"></textarea>
+<div id="new"><label for="">note title: <input id="notename" type="text"></label><button id="notesave">save</button></div>
+<button id="noteh">edit with handwritting</button>
+<p id="add">+</p>
+</div>
+<div id="bottombar"><img  style="width: 22px; margin-right: -20px;" src="short_text_24dp_FFFFFF_FILL0_wght400_GRAD0_opsz24.png" alt=""><p id="writeimg">write</p><img style="width: 22px; margin-right: -20px;" src="draw_24dp_FFFFFF_FILL0_wght400_GRAD0_opsz24.png" alt=""><p id="drawimg">sketch</p><img  style="width: 22px; margin-right: -20px;" src="note_stack_24dp_FFFFFF_FILL0_wght400_GRAD0_opsz24.png" alt=""><p id="noteimg">notes</p><img style="width: 22px; margin-right: -20px;" src="check_circle_24dp_FFFFFF_FILL0_wght400_GRAD0_opsz24.png" alt=""><p  id="testimg">calibrate</p></div>
+<div id="blank"><div id="info"><h2>Get started with scribe</h2>
+<p>with scribe you could convert hand writting text into screen text, create and manage hand written notes, create artistic sketches/drawings and get an overview of your pen precision</p>
+<h3>Tip 1: on screen writing</h3><img style="width: 200px;" src="img1.png" alt="">
+<p>read the following tips carefully as they are crucial to the detection system</p>
+<p>if your writing is not being detetcted make sure to</p>
+<ul><li>write at average speed</li>
+<li>write enlarged and visible</li>
+<li>follow calibration patterns</li>
+<li>try changing your starting direction(if it's mistaking letters)</li>
+<li>do not write with cursive</li>
+<p>before writing</p>
+<li>make sure to go through the calibration pattern</li>
+<li>note : digits and signs are not recognised</li>
+<img style="width: 70px; margin: 5px;" src="img2.png" alt="">
+<li>the two empty btns towards the left are called auxilary keys and you can assign any letter, sign or digit to each one by right clicking on it and typing the desired letter</li>
+</ul>
+<h3>Tip 2: sketching</h3>
+<img style="width: 200px;" src="img3.png" alt="">
+<p>the sketch pad can be used to make artistic drawings the opacity tool can only be used with the marker/shadow brush, the css tool allows you set images and gradients as your sketch background</p>
+<ul><li>copy the image address from the web and paste it in the css tool to set the bg</li>
+<li>use the format 'gradient("corolstart","colorend")' to set a gradient or plain bg</li>
+<li>type clear to clear the bg</li></ul>
+<p>shortcuts--
+alt+t - set thickness,
+alt+l - lock bar,
+tap bar to unlock</p>
+<h3>Tip 3: notes</h3>
+<p>rightclick a note to delete it, note contents are automatically saved except when in handwriting mode, you can convert your written text to a note or edit notes with your handwriting</p>
+<h4>Tip 4: calibration</h4>
+<p>the calibration gives an overview of your pen precision and accuracy overtime</p>
+<button id="calib">handwriting calibration</button></div></div>
+
+</body>
+<script src="index.js"></script>
+</html>

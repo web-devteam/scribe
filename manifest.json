@@ -1,0 +1,25 @@
+
+{
+  "name": "Scribe",
+  "short_name": "Scribe",
+  "display": "standalone",
+  "theme_color": "#2196f3",
+  "description": "your stylus hub",
+  "icons": [
+    {
+      "src": "stylus_note_24dp_000000_FILL0_wght400_GRAD0_opsz24.png",
+      "sizes": "24x24",
+      "type": "image/png"
+    },
+    {
+      "src": "icon2.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+        {
+      "src": "icon1.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}
