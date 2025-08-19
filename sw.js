@@ -1,4 +1,4 @@
-const CACHE_NAME = 'scribepages-v1.1';
+const CACHE_NAME = 'scribepages-v1.2';
 const urlsToCache = ['/scribe/','/scribe/index.html','/scribe/index.css','/scribe/index.js', '/scribe/test.html', '/scribe/test.js', '/scribe/manifest.json'];
 const urlsToCache2 = ['/scribe/check_circle_24dp_000000_FILL0_wght400_GRAD0_opsz24.png', '/scribe/check_circle_24dp_FFFFFF_FILL0_wght400_GRAD0_opsz24.png', '/scribe/colors_30dp_000000_FILL0_wght400_GRAD0_opsz24.png', '/scribe/draw_24dp_000000_FILL0_wght400_GRAD0_opsz24 (1).png', '/scribe/draw_24dp_FFFFFF_FILL0_wght400_GRAD0_opsz24.png', '/scribe/icon1.png', '/scribe/icon2.png', '/scribe/img1.png']
 const urlsToCache3 = ['/scribe/img2.png', '/scribe/img3.png', '/scribe/ink_eraser_30dp_000000_FILL0_wght400_GRAD0_opsz24 (1).png', '/scribe/note_stack_24dp_FFFFFF_FILL0_wght400_GRAD0_opsz24.png', '/scribe/redo_30dp_000000_FILL0_wght400_GRAD0_opsz24.png', '/scribe/save_as_30dp_000000_FILL0_wght400_GRAD0_opsz24.png', '/scribe/short_text_24dp_000000_FILL0_wght400_GRAD0_opsz24.png', '/scribe/short_text_24dp_FFFFFF_FILL0_wght400_GRAD0_opsz24.png' ]
@@ -55,4 +55,5 @@ self.addEventListener('fetch', event => {
       return response || fetch(event.request);
     })
   );
+
 });
